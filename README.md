@@ -11,8 +11,9 @@ or output the error if it didn't work.
 
 
 ## How to use   
-1. Download the MTALuaCompiler.exe from the latest release.  
+1. Download the MTALuaCompiler.exe from the latest release:  
+  https://github.com/emre1702/MTALuaCompiler/releases 
 2. Download luac_mta.exe from the first release or from here:  
-http://luac.mtasa.com/files/windows/x86/luac_mta.exe  
+  http://luac.mtasa.com/files/windows/x86/luac_mta.exe  
 3. Put luac_mta.exe in the same folder as MTALuaCompiler.exe  
 4. Run MTALuaCompiler.exe  
