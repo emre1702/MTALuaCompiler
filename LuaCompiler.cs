@@ -13,7 +13,6 @@ namespace MTALuaCompiler
 
         private static void Compile(string filepath)
         {
-            Console.WriteLine(filepath);
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
                 CreateNoWindow = true,
@@ -32,12 +31,19 @@ namespace MTALuaCompiler
                 {
                     string output = exeProcess.StandardOutput.ReadToEnd();
                     if (output.Length != 0)
-                        MessageBox.Show(output);
+                    {
+                        ConsoleHelper.WriteErrorLine(output);
+                        MessageBoxHelper.ShowError(output);
+                    } else
+                    {
+                        Console.WriteLine(filepath);
+                    }
                     exeProcess.WaitForExit();
                 }
             } catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                ConsoleHelper.WriteErrorLine(ex.Message);
+                MessageBoxHelper.ShowError(ex.Message);
             }
         }
 
@@ -52,6 +58,7 @@ namespace MTALuaCompiler
                 }
                 Compile(filepath);
             }
+            ConsoleHelper.WriteSuccessLine("Done");
         }
     }
 }
