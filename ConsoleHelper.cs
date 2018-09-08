@@ -18,5 +18,14 @@ namespace MTALuaCompiler
             Console.WriteLine(text);
             Console.ResetColor();
         }
+
+        public static void WriteSufixLine(string sufix, string text)
+        {
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Write(sufix);
+            Console.ResetColor();
+            Console.WriteLine("  "+text);
+        }
     }
 }
