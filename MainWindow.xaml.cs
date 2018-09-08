@@ -21,6 +21,7 @@ namespace MTALuaCompiler
         {
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
+                dialog.SelectedPath = Environment.CurrentDirectory;
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog(this.GetIWin32Window());
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
@@ -35,8 +36,15 @@ namespace MTALuaCompiler
             string path = FolderPathBox.Text;
             if (!Directory.Exists(path))
             {
-                ConsoleHelper.WriteErrorLine("Path doesn't exist!");
-                MessageBoxHelper.ShowError("Path doesn't exist!");
+                ConsoleHelper.WriteErrorLine("Der Pfad existiert nicht!");
+                MessageBoxHelper.ShowError("Der Pfad existiert nicht!");
+                return;
+            }
+            if (!File.Exists("./luac_mta.exe"))
+            {
+                ConsoleHelper.WriteErrorLine("Die Datei luac_mta.exe muss im selben Ordner wie dieses Program sein!");
+                MessageBoxHelper.ShowError("Die Datei luac_mta.exe muss im selben Ordner wie dieses Program sein!");
+                return;
             }
             ((Button)sender).IsEnabled = false;
             await Task.Run(() => this.StartCompile(path));
