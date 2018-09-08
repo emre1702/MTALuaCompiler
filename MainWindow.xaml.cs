@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,8 +32,13 @@ namespace MTALuaCompiler
 
         private async void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            ((Button)sender).IsEnabled = false;
             string path = FolderPathBox.Text;
+            if (!Directory.Exists(path))
+            {
+                ConsoleHelper.WriteErrorLine("Path doesn't exist!");
+                MessageBoxHelper.ShowError("Path doesn't exist!");
+            }
+            ((Button)sender).IsEnabled = false;
             await Task.Run(() => this.StartCompile(path));
             ((Button)sender).IsEnabled = true;
         }

@@ -3,10 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:wpfPlus="clr-namespace:WpfPlus;assembly=WpfPlus"
         xmlns:local="clr-namespace:MTALuaCompiler"
         mc:Ignorable="d"
-        Title="MainWindow" Height="196.414" Width="364.754">
+        Style="{DynamicResource MyFlatWindowStyle}"
+        Title="MTA Lua Compiler" Height="196.414" Width="364.754" Icon="images/bonus.bmp">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <wpfPlus:DarkTheme />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="MyFlatWindowStyle" TargetType="{x:Type Window}" BasedOn="{StaticResource FlatWindowStyle}" />
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
@@ -23,7 +32,7 @@
         </Grid.ColumnDefinitions>
         <TextBox Name="FolderPathBox" Grid.Row="1" Grid.Column="1" RenderTransformOrigin="0.671,-6.14"/>
         <Button Name="UploadFileButton" Grid.Row="1" Grid.Column="2" Click="UploadFileButton_Click">
-            <fa:FontAwesome Icon="Upload"/>
+            <Image Source="images/upload_file.png" />
         </Button>
         <Button Content="Starten" Name="StartButton" Grid.Row="3" Grid.Column="2" Click="StartButton_Click"/>
 
