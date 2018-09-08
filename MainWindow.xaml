@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:MTALuaCompiler"
         mc:Ignorable="d"
         Style="{DynamicResource MyFlatWindowStyle}"
-        Title="MTA Lua Compiler" Height="196.414" Width="364.754" Icon="images/bonus.bmp">
+        Title="MTA Lua Compiler" Height="196.414" Width="364.754" Icon="images/bonus.ico">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

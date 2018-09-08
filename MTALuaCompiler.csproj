@@ -42,6 +42,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bonus.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Costura, Version=3.1.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>packages\Costura.Fody.3.1.0\lib\net46\Costura.dll</HintPath>
@@ -127,7 +130,10 @@
     <Resource Include="images\upload_file.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\bonus.bmp" />
+    <Resource Include="bonus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\bonus.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
