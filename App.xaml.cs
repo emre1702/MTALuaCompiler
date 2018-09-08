@@ -13,5 +13,13 @@ namespace MTALuaCompiler
     /// </summary>
     public partial class App : Application
     {
+
+        [STAThread]
+        static void Main()
+        {
+            var application = new App();
+            application.InitializeComponent();
+            application.Run();
+        }
     }
 }
