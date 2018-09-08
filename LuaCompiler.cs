@@ -36,7 +36,7 @@ namespace MTALuaCompiler
                         MessageBoxHelper.ShowError(output);
                     } else
                     {
-                        Console.WriteLine(filepath);
+                        ConsoleHelper.WriteSufixLine(Path.GetFileName(filepath), filepath);
                     }
                     exeProcess.WaitForExit();
                 }
